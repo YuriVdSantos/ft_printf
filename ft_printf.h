@@ -3,24 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yvieira- <yvieira-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yurivieiradossantos <yurivieiradossanto    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 14:34:00 by yvieira-          #+#    #+#             */
-/*   Updated: 2024/11/04 15:26:28 by yvieira-         ###   ########.fr       */
+/*   Updated: 2024/11/05 11:14:42 by yurivieirad      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
-#define FT_PRINTF_H
+#	define FT_PRINTF_H
 
-#include <unistd.h>
-#include <stdarg.h>
+#	include <stdarg.h>
+#	include <unistd.h>
+#	include <stdlib.h>
+#	include <limits.h>
 
-int	ft_printf(const char *format, ...);
-int	ft_print_str(const char *str);
-int	ft_print_chr(char c);
-
-
-
+int	ft_print_unsigned(unsigned int n);
+int	ft_print_string(const char *s);
+int	ft_print_pointer(void *ptr);
+int	ft_print_int(int n);
+int	ft_print_hex(unsigned int n, int uppercase);
+int	ft_print_char(int c);
 
 #endif

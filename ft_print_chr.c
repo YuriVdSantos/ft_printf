@@ -3,17 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_chr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yvieira- <yvieira-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yurivieiradossantos <yurivieiradossanto    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:15:41 by yvieira-          #+#    #+#             */
-/*   Updated: 2024/11/04 16:11:56 by yvieira-         ###   ########.fr       */
+/*   Updated: 2024/11/05 09:35:20 by yurivieirad      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_print_chr(char c)
-{
-	write (1, c, 1);
-	return (1);
+int	ft_print_char(int c) {
+	return write(1, &c, 1);
 }
