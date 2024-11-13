@@ -6,7 +6,7 @@
 /*   By: yvieira- <yvieira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 21:46:13 by yvieira-          #+#    #+#             */
-/*   Updated: 2024/11/11 21:46:30 by yvieira-         ###   ########.fr       */
+/*   Updated: 2024/11/13 18:04:24 by yvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,8 @@ int	process_format(const char *format, va_list args)
 int	ft_printf(const char *format, ...)
 {
 	va_list	args;
-	int		total_length;
 	int		count;
 
-	total_length = 0;
 	count = 0;
 	va_start(args, format);
 	while (*format)
@@ -58,13 +56,11 @@ int	ft_printf(const char *format, ...)
 		else if (*format == '%')
 		{
 			format++;
-			count += process_format(format, args);
-			format++;
+			count += process_format(format++, args);
 		}
 		else
 		{
-			count += write(1, format, 1);
-			format++;
+			count += write(1, format++, 1);
 		}
 	}
 	va_end(args);
